@@ -1,17 +1,19 @@
+import { useState } from "react";
+import InputDatePicker from "../InputDatePicker";
 import NotificationButton from "../NotificationButton";
 import "./style.css";
 
 function SalesCard() {
+  const date = new Date(new Date().setDate(new Date().getDate() - 365));
+
+  const [minDate, setMinDate] = useState(date);
+  const [maxDate, setMaxDate] = useState(new Date());
   return (
     <div className="dsmeta-card">
       <h2 className="dsmeta-sales-title">Vendas</h2>
       <div>
-        <div className="dsmeta-form-control-container">
-          <input className="dsmeta-form-control" type="text" />
-        </div>
-        <div className="dsmeta-form-control-container">
-          <input className="dsmeta-form-control" type="text" />
-        </div>
+        <InputDatePicker dateInit={minDate} updateDate={setMinDate}/>
+        <InputDatePicker dateInit={maxDate} updateDate={setMaxDate}/>
       </div>
 
       <div>
