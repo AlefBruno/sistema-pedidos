@@ -1,10 +1,13 @@
+import Header from "./components/Header";
 import NotificationButton from "./components/NotificationButton";
+import SectionCard from "./components/SectionCard";
 
 function App() {
   return (
     <>
-      <h1>Olá Mundo</h1>
-      <NotificationButton />
+      <Header />
+      <SectionCard />
+      {/* <NotificationButton /> */}
     </>
   );
 }
